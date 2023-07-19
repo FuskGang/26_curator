@@ -22,13 +22,13 @@ with open('ex1.txt') as f:
         cnt += 1
         tm[i][0] += 240 * (i + 1) - (tm[i][1] - tm[i - 1][1])
         
+
+        if fl:
+            if tm[i][1] < ans:
+                ans_cnt += 1
+        
         if cnt == k:
             ans = tm[i][0]
             fl = True
-        
-        if fl:
-            if tm[i][1] > ans:
-                ans_cnt += 1
-        
-            
+ 
 print(ans_cnt, ans)
